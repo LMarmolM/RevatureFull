@@ -1,0 +1,35 @@
+DELIMITER //
+create procedure getAll()
+	BEGIN
+		select * from employee;
+	END//
+DELIMITER ;
+
+DELIMITER //
+create procedure getEmployeeByID(var1 int)
+	BEGIN
+		select * from employee where id=var1;
+	END//
+DELIMITER ;
+
+DELIMITER //
+create procedure setBalance(var1 int, var2 int)
+	BEGIN
+		update employee set balance = var1 where id = var2;
+	END//
+DELIMITER ;
+
+DELIMITER //
+create procedure deleteEntry(var1 int)
+	BEGIN
+		delete from employee where id = var1;
+	END//
+DELIMITER ;
+
+
+DELIMITER //
+create procedure addNamesEmployee(var1 char(20), var2 char(20))
+	BEGIN
+		insert into employee(name,email) values(var1,var2);
+	END//
+DELIMITER ;
